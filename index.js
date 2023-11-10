@@ -86,3 +86,12 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+console.log('Financial Analysis ');
+
+// The total number of months included in the dataset: 'Total Months: 86'
+var sum = 0;
+
+for (let i = 0; i < finances.length; i++) {
+   sum += i;
+}

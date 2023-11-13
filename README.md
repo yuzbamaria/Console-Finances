@@ -14,4 +14,4 @@ During Week 4 at the bootcamp, I learnt basic Javascript and my task was to appl
 https://yuzbamaria.github.io/Console-Finances/ 
 
 ## A screenshot of the application
-[!screenshot-console-finances](console-finances.png)
+![screenshot-console-finances](Console-finances.png)

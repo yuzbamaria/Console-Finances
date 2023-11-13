@@ -89,14 +89,30 @@ var finances = [
 
 console.log('Financial Analysis ');
 
-// The total number of months included in the dataset: 'Total Months: 86'
+// Task 1: The total number of months included in the dataset: 'Total Months: 86'
 console.log('Total Months: ' + finances.length);
 
-
+// Task 2: The net total amount of Profit/Losses over the entire period.
 var sum = 0;
 
 for (let i = 0; i < finances.length; i++) {
-   sum += finances[i];
+   sum += finances[i][1];
 }
 
-console.log('Total' );
+console.log('Total: $' + sum);
+
+// Task 3: The average of the changes in Profit/Losses over the entire period.
+// Steps:
+// 1. Iterate over each months 
+// 2. Subtract next month from current month to find the difference between them 
+// 3. Add this difference to averageChange to find the total sum of the change
+// 4. Divide that total sum of change into 85 (the number changes themselves)
+var averageChange = 0; 
+var totalChange = 0;
+
+for (let i = 0; i < finances.length - 1; i++) {
+  totalChange += finances[i + 1][1] - finances[i][1]; 
+  averageChange = totalChange / (finances.length - 1);
+}
+
+console.log('Average Change: ' + averageChange.toFixed(2));

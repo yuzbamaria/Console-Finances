@@ -88,6 +88,7 @@ var finances = [
 ];
 
 console.log('Financial Analysis ');
+console.log('----------------')
 
 // Task 1: The total number of months included in the dataset: 'Total Months: 86'
 console.log('Total Months: ' + finances.length);
@@ -136,21 +137,30 @@ for (let i = 1; i < finances.length; i++) {
     greatestIncreaseMonth = finances[i][0];
   }
 }
-console.log('Greatest Increase: ' + greatestIncreaseMonth + ' ' + '($' + greatestIncrease + ')');
-
-// var averageChange = 0; 
-// var totalChange = 0;
-
-// for (let i = 0; i < finances.length - 1; i++) {
-//   totalChange += finances[i + 1][1] + finances[i][1]; 
-//   averageChange = totalChange / (finances.length - 1);
-//   console.log('Average Change: ' + averageChange.toFixed(2));
-// }
-
-
-
+console.log('Greatest Increase in Profits/Losses: ' + greatestIncreaseMonth + ' ' + '($' + greatestIncrease + ')');
 
 
 // Task 5: The greatest decrease in Profit/Losses (date and amount) over the entire period.
 //console.log: Greatest Decrease in Profits/Losses: Sep-2013 ($-2196167)
+
+var greatestDecrease = 0;
+var greatestDescreaseMonth;
+
+for (let i = 1; i < finances.length; i++) {
+  var monthlyDecrease = finances[i][1] - finances[i - 1][1];
+
+if (monthlyDecrease < greatestDecrease) {
+   greatestDecrease = monthlyDecrease;
+   greatestDescreaseMonth = finances[i][0];
+}
+}
+
+console.log('Greatest Decrease in Profits/Losses: ' + greatestDescreaseMonth + ' ' + '($' + greatestDecrease + ')');
+
+
+
+
+
+
+
 

@@ -110,9 +110,47 @@ console.log('Total: $' + sum);
 var averageChange = 0; 
 var totalChange = 0;
 
-for (let i = 0; i < finances.length - 1; i++) {
-  totalChange += finances[i + 1][1] - finances[i][1]; 
+for (let i = 1; i < finances.length; i++) {
+  totalChange += finances[i][1] - finances[i - 1][1]; 
   averageChange = totalChange / (finances.length - 1);
 }
 
 console.log('Average Change: ' + averageChange.toFixed(2));
+
+// Task 4: The greatest increase in Profit/Losses (date and amount) over the entire period.
+// Steps:
+// 1. Iterate over each subarray's 1st index (sum)
+// 2. Subtract next month from current month to find the difference between them 
+// 3. Find the greatest positive value 
+// 4. Find the lowest value (greatest decrease)
+// 5. console.log: Greatest Increase in Profits/Losses: Feb-2012 ($1926159)
+
+var greatestIncrease = 0;
+var greatestIncreaseMonth;
+
+for (let i = 1; i < finances.length; i++) {
+  var monthlyIncrease = finances[i][1] - finances[i - 1][1];
+
+  if (monthlyIncrease > greatestIncrease) {
+    greatestIncrease = monthlyIncrease;
+    greatestIncreaseMonth = finances[i][0];
+  }
+}
+console.log('Greatest Increase: ' + greatestIncreaseMonth + ' ' + '($' + greatestIncrease + ')');
+
+// var averageChange = 0; 
+// var totalChange = 0;
+
+// for (let i = 0; i < finances.length - 1; i++) {
+//   totalChange += finances[i + 1][1] + finances[i][1]; 
+//   averageChange = totalChange / (finances.length - 1);
+//   console.log('Average Change: ' + averageChange.toFixed(2));
+// }
+
+
+
+
+
+// Task 5: The greatest decrease in Profit/Losses (date and amount) over the entire period.
+//console.log: Greatest Decrease in Profits/Losses: Sep-2013 ($-2196167)
+
